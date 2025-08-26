@@ -5,17 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 // --- Core Color Definitions ---
 
 // --- NEW Light Theme Colors ---
-// A clean, professional palette that uses orange as a strong accent.
-const Color primaryLight = Color(0xFFF57C00); // A strong, professional orange
-const Color secondaryLight = Color(0xFFFFA726); // A lighter, friendly orange
-const Color backgroundLight = Color(0xFFF7F7F7); // A very light, soft grey
-const Color surfaceLight =
-    Colors.white; // Pure white for cards to make them pop
+const Color primaryLight = Color(0xFFF57C00);
+const Color secondaryLight = Color(0xFFFFA726);
+const Color backgroundLight = Color(0xFFF7F7F7);
+const Color surfaceLight = Colors.white;
 const Color onPrimaryLight = Colors.white;
 const Color onSecondaryLight = Colors.black;
-const Color onSurfaceLight = Color(
-  0xFF1D1D1F,
-); // A very dark grey for text (better than pure black)
+const Color onSurfaceLight = Color(0xFF1D1D1F);
 const Color errorLight = Colors.redAccent;
 
 // Dark Theme Colors (Unchanged)
@@ -37,7 +33,7 @@ const ColorScheme lightColorScheme = ColorScheme.light(
   error: errorLight,
   onPrimary: onPrimaryLight,
   onSecondary: onSecondaryLight,
-  onSurface: onSurfaceLight, // Using our dark grey text color
+  onSurface: onSurfaceLight,
   onError: Colors.white,
   brightness: Brightness.light,
 );
@@ -47,9 +43,9 @@ final ThemeData lightMode = ThemeData(
   colorScheme: lightColorScheme,
   scaffoldBackgroundColor: backgroundLight,
   appBarTheme: AppBarTheme(
-    backgroundColor: backgroundLight, // Match the scaffold for a seamless look
+    backgroundColor: backgroundLight,
     foregroundColor: lightColorScheme.onSurface,
-    elevation: 0, // Modern flat look
+    elevation: 0,
     iconTheme: IconThemeData(color: lightColorScheme.primary),
     titleTextStyle: TextStyle(
       color: lightColorScheme.onSurface,
@@ -80,10 +76,10 @@ final ThemeData lightMode = ThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),
   ),
-  // The base card theme is simple. Our custom widget will add the border.
-  cardTheme: CardTheme(
-    color: lightColorScheme.surface, // Pure white
-    elevation: 2.0, // Subtle shadow
+  // FIX: Changed CardTheme to CardThemeData
+  cardTheme: CardThemeData(
+    color: lightColorScheme.surface,
+    elevation: 2.0,
     margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
   ),
@@ -134,7 +130,7 @@ final ThemeData darkMode = ThemeData(
   appBarTheme: AppBarTheme(
     backgroundColor: backgroundDark,
     foregroundColor: darkColorScheme.onSurface,
-    elevation: 0, // Match light theme elevation
+    elevation: 0,
     iconTheme: IconThemeData(color: darkColorScheme.primary),
     titleTextStyle: TextStyle(
       color: darkColorScheme.onSurface,
@@ -165,7 +161,8 @@ final ThemeData darkMode = ThemeData(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),
   ),
-  cardTheme: CardTheme(
+  // FIX: Changed CardTheme to CardThemeData
+  cardTheme: CardThemeData(
     color: darkColorScheme.surface,
     elevation: 4.0,
     margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
